@@ -1,0 +1,40 @@
+.unit-btn-disabled button {
+  border: 2px solid #ac2211aa;
+  color: #ea1313;
+}
+.btn-active button {
+  border: 2px solid #7cdcf4;
+  color: #7cdcf4;
+}
+.unit-r-btn {
+  border-radius: 5px;
+}
+
+.unit-des {
+  padding: 5px;
+}
+
+.unit-itl {
+  font-style: italic;
+  font-size: small;
+  width: auto;
+}
+.unit-des_div {
+  padding: 10px;
+  background-color: #21262b;
+  border: 2px solid #7cdcf4;
+  border-radius: 2px;
+  color: #7cdcf4;
+  box-shadow: 0 8px 16px 0 rgba(12, 12, 12, 0.1);
+  z-index: 100;
+  max-width: 250px;
+  display: inline-block;
+}
+
+.produce {
+  background-image: linear-gradient(270deg, #00000000 0%, #53dd65aa 100%);
+}
+
+.cost {
+  background-image: linear-gradient(270deg, #00000000 0%, #ac2211aa 100%);
+}

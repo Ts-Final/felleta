@@ -1,0 +1,87 @@
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Felleta</title>
+  <link rel="stylesheet" type="text/css" href="css/layout.css">
+  <link rel="stylesheet" type="text/css" href="css/task.css">
+  <link rel="stylesheet" type="text/css" href="css/res.css">
+  <link rel="stylesheet" type="text/css" href="css/etc.css">
+  <link rel="stylesheet" type="text/css" href="css/flex.css">
+  <link rel="stylesheet" type="text/css" href="css/size.css">
+  <link rel="stylesheet" type="text/css" href="css/text.css">
+  <link rel="stylesheet" type="text/css" href="css/z-index.css">
+  <link rel="stylesheet" type="text/css" href="css/position.css">
+  <link rel="stylesheet" type="text/css" href="css/des.css">
+  <link rel="stylesheet" type="text/css" href="css/buttons.css">
+  <link rel="stylesheet" type="text/css" href="css/gameunit.css">
+
+  <script type="text/javascript" src="javascript/functions.js"></script>
+  <script type="text/javascript" src="javascript/baseclass.js"></script>
+  <script type="text/javascript" src="javascript/resource.js"></script>
+  <script type="text/javascript" src="javascript/task.js"></script>
+  <script type="text/javascript" src="javascript/research.js"></script>
+  <script type="text/javascript" src="javascript/game.js"></script>
+</head>
+
+<body id="body">
+<div id="root" class="z-1 h-full">
+  <div class="order-1 lg:order-1 lg:w-1/4 w-full z-1 h-full">
+    <div class="wrapper">
+      <div id="res_div" class="light-border">
+        <table class="w-full">
+          <tr>
+            <td class="w-1/3 tx-left">Energy</td>
+            <td class="w-1/3 tx-right" id="energy_amount"></td>
+            <td class="w-1/3 tx-right" id="energy_delta"></td>
+          </tr>
+          <tr>
+            <td class="w-1/3 tx-left">Air</td>
+            <td class="w-1/3 tx-right" id="air_amount"></td>
+            <td class="w-1/3 tx-right" id="air_delta"></td>
+          </tr>
+          <tr>
+            <td class="w-1/3 tx-left">Iron</td>
+            <td class="w-1/3 tx-right" id="iron_amount"></td>
+            <td class="w-1/3 tx-right" id="iron_delta"></td>
+          </tr>
+          <tr>
+            <td class="w-1/3 tx-left">Copper</td>
+            <td class="w-1/3 tx-right" id="copper_amount"></td>
+            <td class="w-1/3 tx-right" id="copper_delta"></td>
+          </tr>
+          <tr>
+            <td class="w-1/3 tx-left">Soil</td>
+            <td class="w-1/3 tx-right" id="soil_amount"></td>
+            <td class="w-1/3 tx-right" id="soil_delta"></td>
+          </tr>
+          <tr>
+            <td class="w-1/3 tx-left">Water</td>
+            <td class="w-1/3 tx-right" id="water_amount"></td>
+            <td class="w-1/3 tx-right" id="water_delta"></td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <div class="w-full lg:w-3/4 light-border order-2 lg:order-2 h-full">
+    <div class="pos-fixed top-0 w-full flex-col lg:flex-row flex-around">
+      <button type="button" class="light-border r-button grey-bgi min-w100px tx-center"
+              onclick="setVisibleLayout('tasklist')">Tasks</button>
+      <button type="button" class="light-border r-button grey-bgi min-w100px tx-center"
+              onclick="setVisibleLayout('research')">Research</button>
+      <button type="button" class="light-border r-button grey-bgi min-w100px tx-center"
+              onclick="setVisibleLayout('story')">Story</button>
+    </div>
+    <div class="wrapper">
+      <div class="content" id="tasklist"></div>
+      <div class="content" id="research"></div>
+      <div class="content" id="story"></div>
+    </div>
+
+  </div>
+
+</div>
+</body>

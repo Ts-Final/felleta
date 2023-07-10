@@ -1,0 +1,52 @@
+.flex-col {
+  display: flex;
+  flex-direction: column;
+}
+
+.flex-col-wrap {
+  display: flex;
+  flex-flow: column wrap;
+}
+.flex-between {
+  justify-content: space-between;
+  display: flex;
+}
+
+.order-1 {
+  order: 1;
+}
+
+.order-2 {
+  order: 2;
+}
+
+.order-3 {
+  order: 3;
+}
+.order-4 {
+  order:4;
+}
+
+@media (min-width: 968px) {
+  .lg\:order-1 {
+    order: 1;
+  }
+  .lg\:order-2 {
+    order: 2;
+  }
+  .lg\:order-3 {
+    order: 3;
+  }
+  .lg\:order-4 {
+    order: 4;
+  }
+  .lg\:order-5 {
+    order: 5;
+  }
+  .lg\:flex-col {
+    flex-direction: column;
+  }
+  .lg\:flex-row {
+    flex-direction: row;
+  }
+}

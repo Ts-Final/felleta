@@ -1,0 +1,50 @@
+.task {
+  display: block;
+  /* width: max-content; */
+  /* flex-grow: 5; */
+}
+
+.task-disabled {
+  /* text-decoration: line-through; */
+}
+
+
+/*.task:hover .task-content {*/
+/*  display: block;*/
+/*  !* float: right; *!*/
+/*  border: 2px solid #7cdcf4;*/
+/*  border-radius: 2px;*/
+/*  width: min-content;*/
+/*}*/
+
+/*.task-disabled:hover .task-content {*/
+/*  display: block;*/
+/*  float: right;*/
+/*  border: 2px solid #7cdcf4;*/
+/*  border-radius: 2px;*/
+/*}*/
+
+.tasklist {
+  flex-direction: row;
+  display: flex;
+  padding-left: 2px;
+  flex-wrap: wrap;
+}
+
+
+.task-disabled button {
+  border: 2px solid #ac2211aa;
+}
+
+.task-btn {
+  min-width: max-content;
+  max-width: 100%;
+  padding: 10px;
+  background-image: linear-gradient(60deg, #29323c 0%, #21262b 100%);
+}
+
+.task-itl {
+  font-style: italic;
+  font-size: small;
+  width: auto;
+}

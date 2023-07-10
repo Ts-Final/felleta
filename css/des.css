@@ -1,0 +1,11 @@
+.des_div {
+  padding: 10px;
+  background-color: #21262b;
+  border: 2px solid #7cdcf4;
+  border-radius: 2px;
+  color: #7cdcf4;
+  box-shadow: 0 8px 16px 0 rgba(12, 12, 12, 0.1);
+  z-index: 100;
+  max-width: 250px;
+  display: inline-block;
+}

@@ -1,0 +1,44 @@
+.res-tbody {
+    display: inline;
+}
+
+.res-tbody tr:nth-child(even) {
+    background: #bbbbbb;
+    border: none;
+}
+.res-tbody td {
+    border: none;
+}
+.res-line {
+    text-align: left;
+    flex-direction: row;
+    flex: auto;
+    display: inline-flex;
+    justify-content: space-evenly;
+    margin: 0.125rem 0 0.125rem 0;
+}
+
+
+.l1 td {
+    flex: 3 3 30%;
+}
+
+.l2 td {
+    flex: 4 4 40%;
+}
+
+.l3 td {
+    flex: 3 3 30%;
+}
+
+.res-table {
+    flex: 1 1 100%;
+    display: inline-flex;
+    
+}
+.res-col {
+    display: inline-flex;
+    flex-direction: column;
+    margin: 0.125rem 0 0 0.125rem;
+}
+
