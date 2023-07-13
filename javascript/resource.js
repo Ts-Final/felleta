@@ -1,37 +1,48 @@
 class Resource {
+
   constructor(name, amount, maximum, delta) {
     this.name = name
     this.maximum = maximum
     this.delta = delta
     this.related_research = []
-    this._amount = amount;
+    this._amount = amount
   }
 
   get amount() {
     return this._amount;
   }
 
-  set amount(value) {
-    if (value > 0) {
-      this.add(value)
+  /**
+   *
+   * @param value {number}
+   */
+  produce(value) {
+    let v = value
+    for (let i=0; i<this.related_research.length; i++) {
+      if (this.related_research[i][0].finished) {
+        v *= this.related_research[i][1]
+      }
     }
-    if (value < 0) {
-      this.amount -= value
-    }
+    this._amount += v
   }
 
-  add(value) {
-    let v = value
-    this._amount += v
+  /**
+   *
+   * @param value {number}
+   */
+  cost(value) {
+    let v = abs(value)
+    this._amount -= v
   }
 
 
   /**
    *
    * @param research {Research}
+   * @param percent {number}
    */
-  register_research (research) {
-    this.related_research.push(research)
+  register_research(research, percent) {
+    this.related_research.push([research, percent])
   }
 
 
@@ -40,47 +51,47 @@ class Resource {
 
 function getPrev() {
   return {
-    energy: resources.energy.amount,
-    air: resources.air.amount,
-    iron: resources.iron.amount,
-    copper: resources.copper.amount,
-    soil: resources.soil.amount,
-    water: resources.water.amount,
+    energy: res.energy.amount,
+    air: res.air.amount,
+    iron: res.iron.amount,
+    copper: res.copper.amount,
+    soil: res.soil.amount,
+    water: res.water.amount,
   }
 }
 
 function calcDelta(prev) {
-  player.resources.energy.delta = player.resources.energy.amount - prev.energy
-  player.resources.air.delta = player.resources.air.amount - prev.air
-  player.resources.iron.delta = player.resources.iron.amount - prev.iron
-  player.resources.copper.delta = player.resources.copper.amount - prev.copper
-  player.resources.soil.delta = player.resources.soil.amount - prev.soil
-  player.resources.water.delta = player.resources.water.amount - prev.water
+  player.res.energy.delta = player.res.energy.amount - prev.energy
+  player.res.air.delta = player.res.air.amount - prev.air
+  player.res.iron.delta = player.res.iron.amount - prev.iron
+  player.res.copper.delta = player.res.copper.amount - prev.copper
+  player.res.soil.delta = player.res.soil.amount - prev.soil
+  player.res.water.delta = player.res.water.amount - prev.water
 }
 
 function formatDelta(key, element) {
-  if (player.resources[key].delta > 0) {
-    element.innerHTML = allReplace("+{v}/s", "{v}", formatValue(player.resources[key].delta))
+  if (player.res[key].delta > 0) {
+    element.innerHTML = allReplace("+{v}/s", "{v}", formatValue(player.res[key].delta))
   }
-  if (player.resources[key].delta === 0) {
+  if (player.res[key].delta === 0) {
     element.innerHTML = "-/s"
 
   }
-  if (player.resources[key].delta < 0) {
-    element.innerHTML = allReplace("{v}/s", "{v}", formatValue(player.resources[key].delta))
+  if (player.res[key].delta < 0) {
+    element.innerHTML = allReplace("{v}/s", "{v}", formatValue(player.res[key].delta))
 
   }
 }
 
 function formatAmount(key, element) {
   let context = String("{amount}/{max}");
-  context = allReplace(context, "{amount}", formatValue(player.resources[key].amount))
-  context = allReplace(context, "{max}", formatValue(player.resources[key].maximum))
+  context = allReplace(context, "{amount}", formatValue(player.res[key].amount))
+  context = allReplace(context, "{max}", formatValue(player.res[key].maximum))
   element.innerHTML = context
 }
 
 function displayResource() {
-  const keys = Object.keys(player.resources);
+  const keys = Object.keys(player.res);
   for (let i = 0; i < keys.length; i++) {
     let key = keys[i];
     let amount = document.getElementById(allReplace("{id}_amount", '{id}', key))
@@ -91,7 +102,7 @@ function displayResource() {
   }
 }
 
-const resources = {
+const res = {
   energy: new Resource('Energy', 0, 1e4, 0),
   iron: new Resource('Iron', 0, 3e2, 0),
   copper: new Resource('Copper', 0, 3e2, 0),
