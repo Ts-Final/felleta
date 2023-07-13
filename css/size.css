@@ -49,3 +49,21 @@
 .min-w100px {
   min-width: 100px;
 }
+
+.w-75\% {
+  width: 75%;
+}
+
+.px-10 {
+  padding-right: 10px;
+  padding-left: 10px;
+}
+.mx-10 {
+  margin-right: 10px;
+  margin-left: 10px;
+}
+
+.py-10 {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}

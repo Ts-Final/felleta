@@ -61,15 +61,43 @@ function getDesDivTransform(btn, des_div) {
  * @param id {string}
  */
 function setVisibleLayout (id) {
-  let tasklist = document.getElementById('tasklist')
-  let research = document.getElementById('research')
-  let story = document.getElementById('story')
+  let tasklist = task_list.div
+  let research = research_list.div
+  let story = story_list.div
 
   tasklist.style.display = 'none'
   research.style.display = 'none'
   story.style.display = 'none'
 
-  if (id ==='tasklist')  {tasklist.style.display = ""; }
-  if (id === 'research') {research.style.display = ""; }
-  if (id === 'story')    {story   .style.display = ""; }
+  if (id ==='task-list')  {tasklist.style.display = ""; }
+  if (id === 'research-list') {research.style.display = ""; }
+  if (id === 'story-list')    {story   .style.display = ""; }
+}
+
+function createDiv() {
+  return document.createElement('div')
+}
+
+function createP(text="") {
+  let p = document.createElement('p')
+  p.innerText = text
+  return p
+}
+
+function getRoot() {
+  return document.getElementById('root')
+}
+
+function gerMainContent () {
+  return document.getElementById('main-content')
+}
+
+/**
+ * 绝对值
+ * @param num {number}
+ * @return {number}
+ */
+function abs(num) {
+  if (num < 0) {return -num}
+  else {return num}
 }

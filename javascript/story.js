@@ -1,0 +1,1 @@
+const story_list = new GameUnitContain('story')

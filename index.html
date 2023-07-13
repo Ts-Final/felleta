@@ -22,10 +22,12 @@
   <script type="text/javascript" src="javascript/resource.js"></script>
   <script type="text/javascript" src="javascript/task.js"></script>
   <script type="text/javascript" src="javascript/research.js"></script>
-  <script type="text/javascript" src="javascript/game.js"></script>
+  <script type="text/javascript" src="javascript/story.js"></script>
+  <script type="text/javascript" src="javascript/save.js"></script>
+
 </head>
 
-<body id="body">
+<body>
 <div id="root" class="z-1 h-full">
   <div class="order-1 lg:order-1 lg:w-1/4 w-full z-1 h-full">
     <div class="wrapper">
@@ -63,25 +65,26 @@
           </tr>
         </table>
       </div>
+      <button class="float-left" type="button" onclick="hard_reset()">Reset</button>
     </div>
   </div>
 
-  <div class="w-full lg:w-3/4 light-border order-2 lg:order-2 h-full">
+  <div class="w-full lg:w-3/4 light-border order-2 lg:order-2 h-full" id="main-content">
     <div class="pos-fixed top-0 w-full flex-col lg:flex-row flex-around">
       <button type="button" class="light-border r-button grey-bgi min-w100px tx-center"
-              onclick="setVisibleLayout('tasklist')">Tasks</button>
+              onclick="setVisibleLayout('task-list')">Tasks
+      </button>
       <button type="button" class="light-border r-button grey-bgi min-w100px tx-center"
-              onclick="setVisibleLayout('research')">Research</button>
+              onclick="setVisibleLayout('research-list')">Research
+      </button>
       <button type="button" class="light-border r-button grey-bgi min-w100px tx-center"
-              onclick="setVisibleLayout('story')">Story</button>
-    </div>
-    <div class="wrapper">
-      <div class="content" id="tasklist"></div>
-      <div class="content" id="research"></div>
-      <div class="content" id="story"></div>
+              onclick="setVisibleLayout('story-list')">Story
+      </button>
     </div>
 
   </div>
 
 </div>
+<script type="text/javascript" src="javascript/game.js"></script>
 </body>
+

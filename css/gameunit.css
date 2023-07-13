@@ -1,8 +1,8 @@
-.unit-btn-disabled button {
+.unit-btn-disabled {
   border: 2px solid #ac2211aa;
   color: #ea1313;
 }
-.btn-active button {
+.unit-btn-active {
   border: 2px solid #7cdcf4;
   color: #7cdcf4;
 }
@@ -19,7 +19,7 @@
   font-size: small;
   width: auto;
 }
-.unit-des_div {
+.unit-popout-div {
   padding: 10px;
   background-color: #21262b;
   border: 2px solid #7cdcf4;
@@ -27,7 +27,7 @@
   color: #7cdcf4;
   box-shadow: 0 8px 16px 0 rgba(12, 12, 12, 0.1);
   z-index: 100;
-  max-width: 250px;
+  max-width: 300px;
   display: inline-block;
 }
 

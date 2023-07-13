@@ -16,3 +16,9 @@
 .tx-able {
   color: #7cdcf4;
 }
+.tx-x-small {
+  font-size: x-small;
+}
+.tx-smaller {
+  font-size: smaller;
+}
